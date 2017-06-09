@@ -1,5 +1,5 @@
 # python_poc_behave
-run suite 
-´´´shell´´´
+## run suite 
+```shell
 $ behave
-´´´shell´´´
+```
