@@ -1,4 +1,6 @@
 Feature: Vial entry Smoke Test Suite -> happy path flow
+  Background: Login To CLIA
+    Given I am logged to clia
 
   Scenario Outline: Vial Barcode inputs
      Given we are on protocol 5330
