@@ -14,7 +14,9 @@ def before_all(context):
     # CLIA login
     login_clia(context)
     go_to_clia_protocols_list(context)
+    go_to_clia_accessioner_protocol(context)
 
+#TODO: belongs to a CliaPageObject.login
 def login_clia(context):
     context.clia_url = 'https://internal-tools-app1-staging.east:3000'
     clia_login_user = 'ezequiel.uhrig@ubiome.com'
@@ -37,7 +39,15 @@ def login_clia(context):
     submit_button.click()
     ui.WebDriverWait(context.browser, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, dashboard_main_css_selector)))
 
+#TODO: belongs to a CliaPageObject.go_to_protocol_list
 def go_to_clia_protocols_list(context):
     protocol_list_css_selector = 'body > section > div > div.right_col > div > div.row > div > div > div > table'
     context.browser.get(context.clia_url + '/protocols')
     ui.WebDriverWait(context.browser, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, protocol_list_css_selector)))
+
+#TODO: belongs to a CliaPageObject.go_to_protocol_list
+def go_to_clia_accessioner_protocol(context):
+    #FIXME: if the button is in order it will work if not it will fail refactor to use values.
+    context.browser.get(context.clia_url + '/protocols/8zbH2xjAL4WuTdLfF/run')
+    accessioner_main_css_selector = '#s2id_autogen2'
+    ui.WebDriverWait(context.browser, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, accessioner_main_css_selector)))
