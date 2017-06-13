@@ -5,7 +5,13 @@
 $ pip install -r requirements.txt
 ```
 
-## run suite 
+## run accessioner elements test
+```shell
+$ behave accessioner.feature
+```
+
+
+## run suite
 ```shell
 $ behave
 ```
