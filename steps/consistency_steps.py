@@ -12,4 +12,4 @@ def step_impl(context):
 
 @then(u'we should have the same data in the DB')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then we should have the same data in the DB')
+    pass

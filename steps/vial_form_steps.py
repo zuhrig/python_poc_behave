@@ -1,4 +1,8 @@
 from behave import *
+import time
+from IPython import embed
+
+
 
 @given(u'we search by an existing vial_barcode_id')
 def step_impl(context):
@@ -14,4 +18,4 @@ def step_impl(context):
 
 @then(u'we should be able to submit it')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then we should be able to submit it')
+    pass
